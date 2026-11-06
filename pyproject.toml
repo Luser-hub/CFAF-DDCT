@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cfaf-ddct-reproducibility"
+version = "0.1.0"
+description = "De-identified CFAF-DDCT reference runnable on synthetic EEG-like data"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["numpy>=1.21", "torch>=1.12"]
+
+[project.scripts]
+cfaf-ddct = "main:main"
+
+[tool.setuptools]
+py-modules = ["main", "synthetic_data"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cfaf_ddct*"]
+
